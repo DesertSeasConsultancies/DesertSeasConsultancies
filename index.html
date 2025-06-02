@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, minimum-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=5">
   <title>Desert Seas Consultancies</title>
   <style>
+    /* --> make sure nothing else scrolls; only PDF.js’s own scrollbar appears */
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
       overflow: hidden;
-      -webkit-overflow-scrolling: touch;
+      -webkit-overflow-scrolling: touch; /* for smooth pinch/zoom on iOS */
     }
     iframe {
       width: 100%;
@@ -20,6 +21,7 @@
   </style>
 </head>
 <body>
+  <!--  PDF.js’s viewer.html will render the PDF inline on every device  -->
   <iframe
     src="pdfjs/web/viewer.html?file=/DesertSeasConsultancies.pdf"
     allowfullscreen>
