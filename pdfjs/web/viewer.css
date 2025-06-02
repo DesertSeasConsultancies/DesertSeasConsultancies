@@ -6418,3 +6418,32 @@ dialog :link{
     display:none;
   }
 }
+
+
+/* ────────────────────────────────────────────────────────────────────────── */
+/*   ↓ HIDE THE ENTIRE PDF.JS HEADER TOOLBAR AND SIDEBAR SO NOTHING APPEARS. ↓ */
+
+#toolbarContainer {
+  display: none !important;
+}
+#secondaryToolbar {
+  display: none !important;
+}
+#toolbarViewerRight {
+  display: none !important;
+}
+#sidebarContainer {
+  display: none !important;
+}
+#viewerContainer {
+  margin-left: 0 !important;
+}
+.pdfViewer .page {
+  margin: 0;
+  box-shadow: none !important;
+}
+#errorMoreInfo {
+  display: none !important;
+}
+/* ────────────────────────────────────────────────────────────────────────── */
+
