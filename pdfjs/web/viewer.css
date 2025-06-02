@@ -6421,8 +6421,15 @@ dialog :link{
 
 
 /* ────────────────────────────────────────────────────────────────────────── */
-/*   ↓ HIDE THE ENTIRE PDF.JS HEADER TOOLBAR AND SIDEBAR SO NOTHING APPEARS. ↓ */
+/*   ↓ PDF.js mobile tweaks: white background, fit-to-width, center pages, no UI. ↓ */
 
+/* 1) Force a pure‐white background behind all pages */
+#outerContainer,
+#viewerContainer {
+  background-color: #ffffff !important;
+}
+
+/* 2) Hide PDF.js’s top toolbar (page count, zoom buttons, etc.) */
 #toolbarContainer {
   display: none !important;
 }
@@ -6432,18 +6439,25 @@ dialog :link{
 #toolbarViewerRight {
   display: none !important;
 }
+
+/* 3) Hide the left sidebar (thumbnails/outline) completely */
 #sidebarContainer {
   display: none !important;
 }
+
+/* 4) When you hide the sidebar, margin-left is often nonzero—reset it */
 #viewerContainer {
   margin-left: 0 !important;
 }
+
+/* 5) Each page in the .pdfViewer should be centered horizontally */
 .pdfViewer .page {
-  margin: 0;
-  box-shadow: none !important;
+  margin: 0 auto !important;
+  box-shadow: none !important; /* remove the default “floating” shadow */
 }
+
+/* 6) If the browser shows the “Download PDF” error fallback, hide that too */
 #errorMoreInfo {
   display: none !important;
 }
 /* ────────────────────────────────────────────────────────────────────────── */
-
