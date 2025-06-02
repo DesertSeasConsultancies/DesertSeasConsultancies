@@ -1,24 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, minimum-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, minimum-scale=1" />
   <title>Desert Seas Consultancies</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
-      overflow: auto;
+      overflow: hidden;
       -webkit-overflow-scrolling: touch;
     }
-    #viewer {
-      position: absolute;
-      top: 0; right: 0; bottom: 0; left: 0;
-    }
-    #viewer object,
-    #viewer embed,
-    #viewer iframe {
+    iframe {
       width: 100%;
       height: 100%;
       border: none;
@@ -26,13 +20,9 @@
   </style>
 </head>
 <body>
-  <div id="viewer">
-    <object data="DesertSeasConsultancies.pdf" type="application/pdf">
-      <embed src="DesertSeasConsultancies.pdf" type="application/pdf">
-      <p>Your browser doesn’t support inline PDFs.  
-         <a href="DesertSeasConsultancies.pdf" target="_blank">Download the PDF</a>.
-      </p>
-    </object>
-  </div>
+  <iframe
+    src="pdfjs/web/viewer.html?file=/DesertSeasConsultancies.pdf"
+    allowfullscreen>
+  </iframe>
 </body>
 </html>
