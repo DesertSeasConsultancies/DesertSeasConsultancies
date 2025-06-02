@@ -2,17 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=5">
+  <!--  
+    “width=device-width, initial-scale=1, maximum-scale=5” 
+    ensures the PDF.js canvas is responsive and allows pinch/zoom on mobile.
+  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
   <title>Desert Seas Consultancies</title>
   <style>
-    /* --> make sure nothing else scrolls; only PDF.js’s own scrollbar appears */
+    /* 1) Make sure <html> and <body> fill the entire viewport, no extra scrollbars  */
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
-      overflow: hidden;
-      -webkit-overflow-scrolling: touch; /* for smooth pinch/zoom on iOS */
+      overflow: hidden; 
+      -webkit-overflow-scrolling: touch; /* smooth pinch/zoom on iOS */
+      background-color: #ffffff;        /* white behind everything by default */
     }
+    /* 2) The <iframe> loads PDF.js. We let it fill 100% of width & height. */
     iframe {
       width: 100%;
       height: 100%;
@@ -21,9 +27,13 @@
   </style>
 </head>
 <body>
-  <!--  PDF.js’s viewer.html will render the PDF inline on every device  -->
-  <iframe
-    src="pdfjs/web/viewer.html?file=/DesertSeasConsultancies.pdf"
+  <!--
+    By pointing to “pdfjs/web/viewer.html?file=/DesertSeasConsultancies.pdf#zoom=page-width”,
+    we force PDF.js to open in “fit-to-width” mode. 
+    Any browser (desktop or mobile) will render this inside the iframe. 
+  -->
+  <iframe 
+    src="pdfjs/web/viewer.html?file=/DesertSeasConsultancies.pdf#zoom=page-width"
     allowfullscreen>
   </iframe>
 </body>
