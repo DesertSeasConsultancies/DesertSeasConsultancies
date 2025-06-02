@@ -34,6 +34,25 @@ See https://github.com/adobe-type-tools/cmap-resources
     <link rel="stylesheet" href="viewer.css">
 
   <script src="viewer.mjs" type="module"></script>
+
+      <script>
+  // ────────────────────────────────────────────────────────────────────────────
+  // Force “fit to width” on load and clamp zoom so users cannot zoom out narrower.
+  // ────────────────────────────────────────────────────────────────────────────
+
+  // As soon as PDF.js options are available, set a minimum zoom of “page-width”
+  // and a maximum zoom of, say, “page-fit” or 2x (optional). Adjust as you like.
+  PDFViewerApplicationOptions.set('defaultZoomValue', 'page-width');
+  PDFViewerApplicationOptions.set('minZoom', 'page-width');
+  // If you want to disallow zooming in beyond 200%:
+  PDFViewerApplicationOptions.set('maxZoom', 2);
+
+  // If you also want to hide the “zoom out” button (so they can’t click to zoom out),
+  // you could enable or disable UI elements here.
+  // PDFViewerApplicationOptions.set('enableWebGL', false); // example of other options.
+</script>
+
+      
   </head>
 
   <body tabindex="0">
